@@ -11,15 +11,15 @@
 <body>
 	<header>
 		<h1 class="main_head pink"> Number </h1> <h1 class="guess"> Guesser </h1>
-	
+		
 	</header>
 
 	
 	<section>
 		<p class="range"> Specify the minimum and maximum range you want the random number to be between! </p>
-		<input type="numeric" class="input-min" placeholder="min" value=1>
+		<input type="numeric" class="input-min minmax" placeholder="min" value=1>
 		<p class="minmax"> ← Min --------- Max → </p>
-		<input type="numeric" class="input-max" placeholder="max" value=100> <br>
+		<input type="numeric" class="input-max minmax" placeholder="max" value=100> <br>
 		<p class="minmaxerror" hidden> * </p>
 
 		<p class="difficulty"> Click one of the following options to make the game more or less difficult after winning: </p>
@@ -30,8 +30,8 @@
 		<input type="radio" id="easier" name="chooseDiff" value="easier">
 		<label for="easier"> Make it easier! </label>
 
-		<p class="winnerplusrange" hidden> You won! Increasing difficulty... Hit reset to play again with 10 added to the max!</p>
-		<p class="winnerminusrange" hidden> You won! Decreasing difficulty... Hit reset to play again with 10 subtracted from the max!</p>
+		<p class="winnerpmrange winnerplusrange" hidden> You won! Increasing difficulty... Hit reset to play again with 10 added to the max!</p>
+		<p class="winnerpmrange winnerminusrange" hidden> You won! Decreasing difficulty... Hit reset to play again with 10 subtracted from the max!</p>
 
 		<input type="numeric" class="input-field" placeholder="Enter your guess"> 
 		<button class = "guess-button" disabled> Guess </button>
@@ -46,6 +46,7 @@
 		<br>
 
 		<button class = "reset" disabled> Reset </button>
+		<form action="../Number%20Guesser2/index.html"> <button class="changegame"> Play Two-Player Number Guesser! </button> </form>
 		
 	</section>
 	
