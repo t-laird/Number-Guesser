@@ -1,0 +1,215 @@
+body{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	margin: 0px;
+}
+
+header{
+	width:100%;
+	background-color:#404041;
+	text-align:center;
+	margin: auto;
+	margin-bottom:3%;
+}
+
+::-webkit-input-placeholder {
+    color: #E6E7E8;
+    font-weight: 300;
+}
+
+
+
+
+h1{
+	display:inline-block;
+	font-size:400%;
+	margin-top:1%;
+	margin-bottom:2%;
+}
+
+h1.pink{
+	color: #ED458B;
+	font-weight: 700;
+}
+
+h1.guess{
+	color: #E6E7E8;
+	font-weight: 300;
+}
+
+h2{	
+	color: #444CB2;
+	display: inline-block;
+	box-sizing: border-box;
+	vertical-align: middle;
+	text-align:right;
+}
+
+section{
+	text-align:center;
+}
+
+input{
+	color:#E6E7E8;
+}
+
+input:focus{
+	color: #E6E7E8;
+}
+input.input-field{
+	display: block;
+	height: 50px;
+	margin: 0px auto;
+	font-size:200%;
+	color:#E6E7E8;
+	font-weight:300;
+	width: 39%;
+	margin-bottom: 4.33%;
+}
+
+input.input-min{
+	display: inline-block;
+	height: 50px;
+	margin: 0px auto;
+	margin-top: 1.5%;
+	font-size:200%;
+	color:#E6E7E8;
+	font-weight:300;
+	width: 17%;
+	margin-bottom: 2%;
+}
+
+input.input-max{
+	display: inline-block;
+	height: 50px;
+	margin: 0px auto;
+	font-size:200%;
+	color:#E6E7E8;
+	font-weight:300;
+	width: 17%;
+	margin-bottom: 2%;
+	margin-right: 1.5%;
+}
+
+section{
+	margin: 0px auto;
+}
+
+button{
+	border-radius: 35px;
+	font-size:200%;
+	width:20.47%;
+	display: inline-block;
+	font-weight: 300;
+	background-color: #D0D2D3;
+	border: #D0D2D3;
+	color: #FFFFFF;
+}
+
+button.reset{
+	width:40.94%;
+}
+
+button.guess-button{
+
+	margin-bottom: 4.50%;
+}
+
+button.clear-input{
+	margin-left: 2.5%;
+}
+
+}
+
+button:disabled{
+	background-color: #D0D2D3;
+	color: #FFFFFF;
+}
+
+
+button:enabled{
+	background-color: #929497;
+	color: #FFFFFF;
+}
+
+button:hover{
+	background-color: #EB008B;
+	color: #FFFFFF;
+}
+
+button.reset{
+	margin-bottom: 1%;
+}
+
+p.minmax{
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;	
+	text-align: center;
+}
+
+p.number{
+	color: #EB008B;
+	font-size: 2000%;
+	text-align: center;
+	margin-top: -5%;
+	margin-bottom: -5%;
+}
+
+p.lastG{
+	color: #404041;
+	font-size: 200%;
+	text-align: center;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+p.range{
+	color: #404041;
+	font-size: 150%;
+	text-align: center;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+p.highlow{
+	color: #404041;
+	font-size: 200%;
+	text-align: center;
+	margin-bottom: 1%;`
+	margin-top: 0px;
+}
+
+p.minmaxerror{
+	color:red;
+	margin-top:0px;
+}
+
+p.winnerplusrange{
+	position: fixed;
+	top: 55%;
+	right: 0.5%;
+	font-size:125%;
+	text-align:left;
+	float:right;
+	width:20%;
+}
+
+p.winnerminusrange{
+	position: fixed;
+	top: 55%;
+	right: 0.5%;
+	font-size:125%;
+	text-align:left;
+	float:right;
+	width:20%;
+}
+
+input#same{
+	margin-bottom:2%;
+}
+
+p.difficulty{
+	display: inline-block;
+	font-weight: 700;
+}

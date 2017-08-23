@@ -1,0 +1,62 @@
+<!DOCTYPE = "html">
+<html lang="en">
+
+<head>
+	<title> Number Guesser </title>
+	<link href="style.css" type="text/css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+</head>
+
+<body>
+	<header>
+		<h1 class="main_head pink"> Number </h1> <h1 class="guess"> Guesser </h1>
+	
+	</header>
+
+	
+	<section>
+		<p class="range"> Specify the minimum and maximum range you want the random number to be between! </p>
+		<input type="numeric" class="input-min" placeholder="min" value=1>
+		<p class="minmax"> ← Min --------- Max → </p>
+		<input type="numeric" class="input-max" placeholder="max" value=100> <br>
+		<p class="minmaxerror" hidden> * </p>
+
+		<p class="difficulty"> Click one of the following options to make the game more or less difficult after winning: </p>
+		<input type="radio" id="same" name="chooseDiff" value="same" checked>
+		<label for="same"> Keep it the same! </label>
+		<input type="radio" id="harder" name="chooseDiff" value="harder">
+		<label for="harder"> Make it harder! </label>
+		<input type="radio" id="easier" name="chooseDiff" value="easier">
+		<label for="easier"> Make it easier! </label>
+
+		<p class="winnerplusrange" hidden> You won! Increasing difficulty... Hit reset to play again with 10 added to the max!</p>
+		<p class="winnerminusrange" hidden> You won! Decreasing difficulty... Hit reset to play again with 10 subtracted from the max!</p>
+
+		<input type="numeric" class="input-field" placeholder="Enter your guess"> 
+		<button class = "guess-button" disabled> Guess </button>
+		<button class = "clear-input" disabled> Clear </button> <br>
+		<p class="lastG"> Your last guess was </p>
+		<p class="number"> # </p>
+		<p class="highlow"> After your first guess check here for a hint! </p>
+
+		
+		
+
+		<br>
+
+		<button class = "reset" disabled> Reset </button>
+		
+	</section>
+	
+		
+
+
+
+	<script type="text/javascript" src="script.js"></script>
+
+
+</body>
+</html>
+
+
