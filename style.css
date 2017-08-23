@@ -114,6 +114,12 @@ button:hover{
 	color: #FFFFFF;
 }
 
+p{
+	color: #404041;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
 button.reset{
 	margin-bottom: 1%;
 }
@@ -130,42 +136,23 @@ p.number{
 }
 
 p.lastG{
-	color: #404041;
 	font-size: 200%;
-	margin-bottom: 0px;
-	margin-top: 0px;
 }
 
 p.range{
-	color: #404041;
 	font-size: 150%;
-	margin-bottom: 0px;
-	margin-top: 0px;
 }
 
 p.highlow{
-	color: #404041;
 	font-size: 200%;
-	margin-bottom: 1%;`
-	margin-top: 0px;
+	margin-bottom: 1%;
 }
 
 p.minmaxerror{
 	color:red;
-	margin-top:0px;
 }
 
-p.winnerplusrange{
-	position: fixed;
-	top: 55%;
-	right: 0.5%;
-	font-size:125%;
-	text-align:left;
-	float:right;
-	width:20%;
-}
-
-p.winnerminusrange{
+p.winnerpmrange{
 	position: fixed;
 	top: 55%;
 	right: 0.5%;
@@ -183,4 +170,3 @@ p.difficulty{
 	display: inline-block;
 	font-weight: 700;
 }
-
