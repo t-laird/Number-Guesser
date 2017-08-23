@@ -12,13 +12,6 @@ header{
 	margin-bottom:3%;
 }
 
-::-webkit-input-placeholder {
-    color: #E6E7E8;
-    font-weight: 300;
-}
-
-
-
 
 h1{
 	display:inline-block;
@@ -34,61 +27,47 @@ h1.pink{
 
 h1.guess{
 	color: #E6E7E8;
-	font-weight: 300;
 }
 
-h2{	
-	color: #444CB2;
-	display: inline-block;
-	box-sizing: border-box;
-	vertical-align: middle;
-	text-align:right;
-}
+
 
 section{
 	text-align:center;
 }
 
 input{
-	color:#E6E7E8;
+	height: 50px;
+	margin: 0px auto;
+	color:#929497;
+	font-size: 200%;
 }
 
-input:focus{
-	color: #E6E7E8;
+input::placeholder{
+	color:#D0D2D3;
 }
+
+input[type="radio"]{
+	height: 30px;
+	margin: default;
+	font-size: 100%;
+}
+
+
 input.input-field{
 	display: block;
-	height: 50px;
-	margin: 0px auto;
-	font-size:200%;
-	color:#E6E7E8;
-	font-weight:300;
 	width: 39%;
-	margin-bottom: 4.33%;
+	margin-bottom: 2.5%;
 }
 
-input.input-min{
+input.minmax{
 	display: inline-block;
-	height: 50px;
-	margin: 0px auto;
 	margin-top: 1.5%;
-	font-size:200%;
-	color:#E6E7E8;
-	font-weight:300;
 	width: 17%;
 	margin-bottom: 2%;
 }
 
-input.input-max{
-	display: inline-block;
-	height: 50px;
-	margin: 0px auto;
-	font-size:200%;
-	color:#E6E7E8;
-	font-weight:300;
-	width: 17%;
-	margin-bottom: 2%;
-	margin-right: 1.5%;
+input.input-max::placeholder{
+	color:#D0D2D3;
 }
 
 section{
@@ -100,7 +79,6 @@ button{
 	font-size:200%;
 	width:20.47%;
 	display: inline-block;
-	font-weight: 300;
 	background-color: #D0D2D3;
 	border: #D0D2D3;
 	color: #FFFFFF;
@@ -119,7 +97,6 @@ button.clear-input{
 	margin-left: 2.5%;
 }
 
-}
 
 button:disabled{
 	background-color: #D0D2D3;
@@ -143,15 +120,11 @@ button.reset{
 
 p.minmax{
 	display: inline-block;
-	margin-left: auto;
-	margin-right: auto;	
-	text-align: center;
 }
 
 p.number{
 	color: #EB008B;
 	font-size: 2000%;
-	text-align: center;
 	margin-top: -5%;
 	margin-bottom: -5%;
 }
@@ -159,7 +132,6 @@ p.number{
 p.lastG{
 	color: #404041;
 	font-size: 200%;
-	text-align: center;
 	margin-bottom: 0px;
 	margin-top: 0px;
 }
@@ -167,7 +139,6 @@ p.lastG{
 p.range{
 	color: #404041;
 	font-size: 150%;
-	text-align: center;
 	margin-bottom: 0px;
 	margin-top: 0px;
 }
@@ -175,7 +146,6 @@ p.range{
 p.highlow{
 	color: #404041;
 	font-size: 200%;
-	text-align: center;
 	margin-bottom: 1%;`
 	margin-top: 0px;
 }
@@ -212,4 +182,9 @@ input#same{
 p.difficulty{
 	display: inline-block;
 	font-weight: 700;
+}
+
+button.changegame{
+}
+form{
 }
