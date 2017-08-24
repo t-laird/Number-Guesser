@@ -86,6 +86,7 @@ button{
 
 button.reset{
 	width:40.94%;
+	margin-bottom: 1%;
 }
 
 button.guess-button{
@@ -118,10 +119,6 @@ p{
 	color: #404041;
 	margin-top: 0px;
 	margin-bottom: 0px;
-}
-
-button.reset{
-	margin-bottom: 1%;
 }
 
 p.minmax{
@@ -169,4 +166,8 @@ input#same{
 p.difficulty{
 	display: inline-block;
 	font-weight: 700;
+}
+
+button.changegame{
+	width:35%;
 }
