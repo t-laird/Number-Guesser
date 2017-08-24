@@ -1,18 +1,12 @@
  //Link elements from HTML to JS
-
-
-var answerBox = document.querySelector('.input-field'); //Leave global
-var guessButton = document.querySelector('.guess-button'); //Leave global
-var number = document.querySelector('.number'); //Make local - 2 functions addNumber and resetGame
-var clearButton= document.querySelector('.clear-input'); //Leave global
-var min = document.querySelector('.input-min'); //Leave global
-var max = document.querySelector('.input-max'); //Leave global
-var highLow = document.querySelector('.highlow'); //Make local - 2 functions highLow & resetGame
-var resetButton = document.querySelector('.reset'); //Leave global
-var playCounter = 0; //Leave global
-var onlyOnce = 1; //Maybe local butOnlyOnce function
-var storedRand; //Maybe local butOnlyOnce function
-var minMaxError = document.querySelector('.minmaxerror'); //Maybe local minOrMaxErrror and enable guess input
+var answerBox = document.querySelector('.input-field'); //Leave global referenced X times
+var guessButton = document.querySelector('.guess-button'); //Leave global referenced X times
+var clearButton= document.querySelector('.clear-input'); //Leave global - used by event listener
+var min = document.querySelector('.input-min'); //Leave global - used by event listener
+var max = document.querySelector('.input-max'); //Leave global - used by event listener
+var resetButton = document.querySelector('.reset'); //Leave global - used by event listener
+var playCounter = 0; //Leave global - counts whether or not user has started game and is referenced several times
+var onlyOnce = 1; //do not do anything to this variable please - forces random number to be generated only once
 var makeHard = document.querySelector('.winnerplusrange'); //Make local addNumber & increase limit
 var makeEasy = document.querySelector('.winnerminusrange'); //Make local addNumber & decrease limit
 
@@ -47,6 +41,8 @@ function disableMinMax(){
 function minOrMaxError(){
 	var minValue = parseInt(min.value);
 	var maxValue = parseInt(max.value);
+	var minMaxError = document.querySelector('.minmaxerror'); //Maybe local minOrMaxErrror and enable guess input
+
 	if (minValue > maxValue || isNaN(minValue) || isNaN(maxValue)){
 		minMaxError.innerText = "Make sure your min is bigger than your max and that you are inputting numbers!";
 		minMaxError.hidden = false;
@@ -79,6 +75,8 @@ function butOnlyOnce(){
 //Changes # on page load to the last user guess.
 function addNumber(){
 	var answer = parseInt(answerBox.value);
+	var number = document.querySelector('.number'); //Make local - 2 functions addNumber and resetGame
+
 	number.innerText = answer;
 	makeHard.hidden = true;
 	makeEasy.hidden = true;
@@ -116,6 +114,9 @@ function increaseLimit(){
 		max.value = parseInt(max.value) + 10;
 		makeHard.hidden = false;
 	}
+	else{
+		makeHard.hidden=true;
+	}
 }
 
 function decreaseLimit(){
@@ -133,6 +134,8 @@ function decreaseLimit(){
 }
 
 function enableGuessInput(){
+	var minMaxError = document.querySelector('.minmaxerror'); //Maybe local minOrMaxErrror and enable guess input
+
 	if (minMaxError.hidden){
 		answerBox.disabled=false;
 	}
@@ -150,9 +153,8 @@ function comparison(){
 	var minimum = parseInt(min.value);
 	var maximum = parseInt(max.value);
 	var randomNum = butOnlyOnce();
+	var highLow = document.querySelector('.highlow'); //Make local - 2 functions highLow & resetGame
 	
-	
-
 	console.log(userGuess);
 	if (isNaN(userGuess)){
 		highLow.innerText = "Error... Please make sure you enter a number.";
@@ -186,12 +188,14 @@ function enableReset(){
 }
 
 function resetGame(){
+	var highLow = document.querySelector('.highlow'); //Make local - 2 functions highLow & resetGame
+	var number = document.querySelector('.number'); //Make local - 2 functions addNumber and resetGame
 	randomNum = Math.floor(Math.random()*100+1);
 	playCounter = 0;
 	onlyOnce = 1;
 	butOnlyOnce();
 	number.innerText = "#";
-	highLow.innerText = "After your first guess check here for a hint!"
+	highLow.innerText = "After your first guess check here for a hint!";
 	min.disabled = false;
 	max.disabled = false;
 	answerBox.disabled = false;
