@@ -1,34 +1,32 @@
- //Link elements from HTML to JS
-var answerBox = document.querySelector('.input-field'); //Leave global referenced X times
-var guessButton = document.querySelector('.guess-button'); //Leave global referenced X times
-var clearButton= document.querySelector('.clear-input'); //Leave global - used by event listener
-var min = document.querySelector('.input-min'); //Leave global - used by event listener
-var max = document.querySelector('.input-max'); //Leave global - used by event listener
-var resetButton = document.querySelector('.reset'); //Leave global - used by event listener
+ //********* Query Selectors - Reference HTML tags in JS *********
+var answerBox = document.querySelector('.input-field'); //Leave global referenced 8 functions & in event listener
+var guessButton = document.querySelector('.guess-button'); //Leave global referenced 1 function & in event listener.
+var clearButton= document.querySelector('.clear-input'); //Leave global referenced 1 function & in event listener an
+var min = document.querySelector('.input-min'); //Leave global referenced in 2 functions & used by event listener
+var max = document.querySelector('.input-max'); //Leave global referenced in 2 functions & used by event listener
+var resetButton = document.querySelector('.reset'); //Leave global referenced in 3 functions & used by event listener
 var playCounter = 0; //Leave global - counts whether or not user has started game and is referenced several times
 var onlyOnce = 1; //do not do anything to this variable please - forces random number to be generated only once
-var makeHard = document.querySelector('.winnerplusrange'); //Make local addNumber & increase limit
-var makeEasy = document.querySelector('.winnerminusrange'); //Make local addNumber & decrease limit
+var makeHard = document.querySelector('.winnerplusrange'); //Referenced in 2 functions
+var makeEasy = document.querySelector('.winnerminusrange'); //Referenced in 2 functions
 
-//Event listeners for text entry and button clicks!
-
-guessButton.addEventListener('click', addNumber);
-clearButton.addEventListener('click',clearNumber);
-answerBox.addEventListener('keyup', enableGuess);
-guessButton.addEventListener('click',comparison);
-answerBox.addEventListener('keyup', clearButtonEnable);
-resetButton.addEventListener('click',resetGame);
-max.addEventListener('keyup',minOrMaxError);
-min.addEventListener('keyup',minOrMaxError);
-max.addEventListener('keyup',enableGuessInput);
-guessButton.addEventListener('click',disableMinMax);
-min.addEventListener('keyup',generateRand);
-max.addEventListener('keyup',generateRand);
-
-// min.addEventListener('keyup',minOrMaxError);
+// ********* Event listeners for text entry and button clicks! *********
+guessButton.addEventListener('click', addNumber); //Updates number # and passes guess to comparison function.
+guessButton.addEventListener('click',comparison); //Compares numbers as passed from addNumber & generateRand functions.
+guessButton.addEventListener('click',disableMinMax); //Disables min and max inputs after first guess
+answerBox.addEventListener('keyup', enableGuess); //Enables guess button under right conditions
+clearButton.addEventListener('click',clearNumber); //Clears text from answerBox - Runs after each guess.
+answerBox.addEventListener('keyup', clearButtonEnable); //Enables clear button after text is entered in answer box.
+resetButton.addEventListener('click',resetGame); //Resets game. Runs a number of functions.
+min.addEventListener('keyup',minOrMaxError); //Checks for errors in min/max input when characters are entered.
+max.addEventListener('keyup',minOrMaxError); //Checks for errors in min/max input when characters are entered.
+max.addEventListener('keyup',enableGuessInput); //Checks if there is a showing min/max error and disables guessing if so.
+min.addEventListener('keyup',generateRand); //Re-generates rand as min/max are changed.
+max.addEventListener('keyup',generateRand); //Re-generates rand as min/max are changed.
 
 
-//Functions for button disables/enables and value checks!
+
+// ********* Functions for button enable/disables and value checks **********
 
 
 //Disables min and max fields after first user guess
@@ -91,12 +89,14 @@ function clearButtonEnable(){
 		clearButton.disabled = true;
 	}
 }
+
 //Clears any text or numbers in  the clear box
 function clearNumber(){
 	answerBox.value = '';
 	clearButton.disabled = true;
 	answerBox.focus();
 }
+
 //Enables guess button when answerbox is not blank, outside of min/max range, min/max are valid, answerbox has a number entry
  function enableGuess(){
 	var minValue = parseInt(min.value);
@@ -108,6 +108,7 @@ function clearNumber(){
 		guessButton.disabled = false;
 	}
 }
+
 //Makes the game increase limit when you win 
 function increaseLimit(){
 	if (document.getElementById('harder').checked){
@@ -119,6 +120,7 @@ function increaseLimit(){
 	}
 }
 
+//Runs decrease limit function if 'easier' option is checked and upper limit is greater than 10
 function decreaseLimit(){
 	if (document.getElementById('easier').checked && max.value > 10){
 		max.value = parseInt(max.value) - 10;
@@ -133,6 +135,7 @@ function decreaseLimit(){
 	}
 }
 
+//Enables guessing as long there are no min/max errors.
 function enableGuessInput(){
 	var minMaxError = document.querySelector('.minmaxerror'); //Maybe local minOrMaxErrror and enable guess input
 
@@ -144,10 +147,12 @@ function enableGuessInput(){
 	}
 }
 
+//Resets the answerBox
 function guessReset(){
 	answerBox.value = "";
 }
 
+//Compares userGuess w/ random value. Runs a variety of functions regardless of outcome, runs particular functions if win condition fulfilled.
 function comparison(){
 	var userGuess = addNumber();
 	var minimum = parseInt(min.value);
@@ -178,7 +183,7 @@ function comparison(){
 	clearNumber();
 }
 
-
+//Enables the reset button once the user has made at least one guess.
 function enableReset(){
 	if (playCounter === 0){
 		resetButton.disabled = true;
@@ -187,9 +192,10 @@ function enableReset(){
 	}
 }
 
+//Resets the game, resets counters back to their 0 state, regenerates rand, resets number text, resets hint, re-enables min/max inputs, re-enables answer box, disables reset button for immediate use, focuses answer box.
 function resetGame(){
-	var highLow = document.querySelector('.highlow'); //Make local - 2 functions highLow & resetGame
-	var number = document.querySelector('.number'); //Make local - 2 functions addNumber and resetGame
+	var highLow = document.querySelector('.highlow');
+	var number = document.querySelector('.number');
 	randomNum = Math.floor(Math.random()*100+1);
 	playCounter = 0;
 	onlyOnce = 1;
