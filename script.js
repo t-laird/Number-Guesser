@@ -160,7 +160,6 @@ function comparison(){
 	var randomNum = butOnlyOnce();
 	var highLow = document.querySelector('.highlow'); //Make local - 2 functions highLow & resetGame
 	
-	console.log(userGuess);
 	if (isNaN(userGuess)){
 		highLow.innerText = "Error... Please make sure you enter a number.";
 	}else if(userGuess > maximum || userGuess < minimum){
@@ -181,6 +180,11 @@ function comparison(){
 	guessReset();
 	enableGuess();
 	clearNumber();
+}
+
+function inputNaN(user){
+	if (isNaN(user)){
+		highLow.innerText = "Error... Please make sure you enter a number.";)
 }
 
 //Enables the reset button once the user has made at least one guess.
